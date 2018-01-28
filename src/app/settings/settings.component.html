@@ -1,0 +1,33 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+
+      <div class="column is-narrow ">
+        <aside class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li>
+              <a routerLink="profile"
+                 routerLinkActive="is-active">
+                Profile
+              </a>
+            </li>
+            <li><a routerLink="account"
+                   routerLinkActive="is-active">
+              Account Settings
+            </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="column box">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+</section>
+

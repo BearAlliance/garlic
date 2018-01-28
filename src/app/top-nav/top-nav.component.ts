@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from '../session.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
+  isSignedIn$: Observable<boolean>;
+  isSignedIn: boolean;
+
+  constructor(private sessionService: SessionService) {
+  }
 
   ngOnInit() {
+    this.isSignedIn$ = this.sessionService.getSigninObservable();
+    this.isSignedIn$.subscribe((isSignedIn: boolean) => {
+      this.isSignedIn = isSignedIn;
+    });
   }
 
 }

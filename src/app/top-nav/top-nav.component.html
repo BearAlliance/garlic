@@ -34,7 +34,22 @@
       </div>
     </div>
 
-    <div class="navbar-end">
+
+    <!-- Is signed in -->
+    <div class="navbar-end"
+         *ngIf="isSignedIn">
+      <a class="navbar-item">
+        My Markets
+      </a>
+      <a class="navbar-item">
+        My Farms
+      </a>
+      <app-mini-me class="navbar-item"></app-mini-me>
+    </div>
+
+    <!-- Is sisgned out-->
+    <div class="navbar-end"
+         *ngIf="!isSignedIn">
       <a class="navbar-item">
         Find a Market
       </a>
@@ -50,10 +65,10 @@
           Sign Up
         </a>
       </div>
+      <a class="navbar-item"
+         routerLink="signin">
+        Sign In
+      </a>
     </div>
-    <a class="navbar-item"
-       routerLink="signin">
-      Sign In
-    </a>
   </div>
 </nav>
