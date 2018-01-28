@@ -1,0 +1,45 @@
+<!-- Has shops -->
+<div class="columns">
+  <div class="column is-one-quarter is-pulled-right">
+    <div class="button is-success"
+         routerLink="add">
+        <span>
+          <i class="fa fa-plus"></i>
+        </span>
+      <span>
+          Add a shop
+        </span>
+    </div>
+  </div>
+</div>
+<div class="tabs is-centered is-box">
+  <ul>
+    <li class="is-active"
+        *ngFor="let shop of shops">
+      <a>
+        {{ shop.name }}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- No shops -->
+<section class="section">
+  <article class="message is-warning"
+           *ngIf="shops.length === 0">
+    <div class="message-body">
+      <p>
+        You don't have any shops yet!
+      </p>
+      <div class="button is-success"
+           routerLink="add">
+        <span>
+          <i class="fa fa-plus"></i>
+        </span>
+        <span>
+          Add a shop
+        </span>
+      </div>
+    </div>
+  </article>
+</section>
