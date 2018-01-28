@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SessionService } from '../session.service';
+import { AuthService } from '../session.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -12,14 +12,15 @@ export class TopNavComponent implements OnInit {
   isSignedIn$: Observable<boolean>;
   isSignedIn: boolean;
 
-  constructor(private sessionService: SessionService) {
+  constructor(private authService: AuthService) {
   }
 
   ngOnInit() {
-    this.isSignedIn$ = this.sessionService.getSigninObservable();
+    this.isSignedIn$ = this.authService.getSigninObservable();
     this.isSignedIn$.subscribe((isSignedIn: boolean) => {
       this.isSignedIn = isSignedIn;
     });
+
   }
 
 }

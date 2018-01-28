@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SessionService} from "../session.service";
+import {AuthService} from "../session.service";
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MiniMeComponent implements OnInit {
 
-  constructor(private sessionService: SessionService,
+  constructor(private sessionService: AuthService,
               private router: Router) { }
 
   ngOnInit() {
