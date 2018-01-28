@@ -19,7 +19,7 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
     WelcomeComponent,
     SignUpComponent,
     SignUpSuccessComponent,
-    SignUpFormComponent,
+    SignUpFormComponent
   ],
   entryComponents: [FrontpageComponent]
 })
