@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ShellComponent } from './shell/shell.component';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShellComponent,
+    TopNavComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
