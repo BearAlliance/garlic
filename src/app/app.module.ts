@@ -10,6 +10,7 @@ import {SignInComponent} from './sign-in/sign-in.component';
 import {SessionService} from './session.service';
 import { MiniMeComponent } from './mini-me/mini-me.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     TopNavComponent,
     SignInComponent,
     MiniMeComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
