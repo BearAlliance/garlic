@@ -7,13 +7,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './auth-guard.service';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/welcome', pathMatch: 'full'},
   {path: 'welcome', loadChildren: 'app/frontpage/frontpage.module#FrontpageModule'},
   {path: 'signin', component: SignInComponent},
   {
     path: 'home',
     canActivate: [AuthGuard],
-    component: HomeComponent
+    loadChildren: 'app/home/home.module#HomeModule'
   },
   {
     path: 'settings',
@@ -21,6 +20,7 @@ const routes: Routes = [
     loadChildren: 'app/settings/settings.module#SettingsModule'
   },
 
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: NotFoundComponent}
 ];
 
