@@ -3,37 +3,21 @@
     <a class="navbar-item" routerLink="/">
       <img src="assets/images/garlic-icon.png" alt="Garlic" width="30" height="30">
     </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <div class="navbar-burger burger"
+         (click)="toggleMobileNav()">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
+  <div class="navbar-menu"
+       [ngClass]="{'is-active': showMobileNav}">
     <div class="navbar-start">
       <a class="navbar-item" routerLink="/">
         Garlic
       </a>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link" href="/documentation/overview/start/">
-          Docs
-        </a>
-        <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item" href="/documentation/overview/start/">
-            Overview
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-            Elements
-          </a>
-          <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-            Components
-          </a>
-        </div>
-      </div>
     </div>
-
 
     <!-- Is signed in -->
     <div class="navbar-end"
@@ -47,7 +31,7 @@
       <app-mini-me class="navbar-item"></app-mini-me>
     </div>
 
-    <!-- Is sisgned out-->
+    <!-- Is signed out-->
     <div class="navbar-end"
          *ngIf="!isSignedIn">
       <a class="navbar-item">

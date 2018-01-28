@@ -11,6 +11,7 @@ export class TopNavComponent implements OnInit {
 
   isSignedIn$: Observable<boolean>;
   isSignedIn: boolean;
+  showMobileNav = false;
 
   constructor(private authService: AuthService) {
   }
@@ -21,6 +22,10 @@ export class TopNavComponent implements OnInit {
       this.isSignedIn = isSignedIn;
     });
 
+  }
+
+  toggleMobileNav() {
+    this.showMobileNav = !this.showMobileNav;
   }
 
 }
