@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../session.service';
 import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-top-nav',
@@ -13,7 +14,8 @@ export class TopNavComponent implements OnInit {
   isSignedIn: boolean;
   showMobileNav = false;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              private http: HttpClient) {
   }
 
   ngOnInit() {
@@ -22,6 +24,16 @@ export class TopNavComponent implements OnInit {
       this.isSignedIn = isSignedIn;
     });
 
+  }
+
+  testApi() {
+    this.http.get('/test')
+      .subscribe((res: any) => {
+          console.log('res', res);
+        },
+        (err: any) => {
+          console.log('err', err);
+        });
   }
 
   toggleMobileNav() {
